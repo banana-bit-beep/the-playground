@@ -1,0 +1,46 @@
+/* =========================================================
+   layout.css – LEARNER B · Topic 3: Layout with Grid
+   Page layout, speaker grid, fluid type, container queries
+   ========================================================= */
+
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 10px;
+}
+
+.hero     { grid-area: hero; }
+.schedule { grid-area: schedule; }
+.venue    { grid-area: venue; }
+.speakers { grid-area: speakers; }
+.gallery  { grid-area: gallery; }
+.faq      { grid-area: faq; }
+.register { grid-area: register; }
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "hero"
+    "schedule"
+    "venue"
+    "speakers"
+    "gallery"
+    "faq"
+    "register";
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+      "hero     hero"
+      "schedule venue"
+      "speakers speakers"
+      "gallery  gallery"
+      "faq      faq"
+      "register register";
+    }
+}

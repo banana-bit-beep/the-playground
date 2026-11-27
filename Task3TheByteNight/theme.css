@@ -1,0 +1,123 @@
+/* =========================================================
+   theme.css – LEARNER B · Topic 4: Theming & motion
+   Custom properties, dark mode, transitions, @keyframes
+   ========================================================= */
+
+
+/*THE DESIGN MENU*/
+
+:root {
+    /*this is for my colours*/
+    --bg-page:         #97c4f1;
+    --bg-surface:      #ffffff;
+    --bg-hero:         #a20dcb;
+    --text-main:       #1e293b;
+    --text-muted:      #475569;
+    --text-inverse:    #f8fafc;
+    --accent:          #4f46e5;
+    --accent-contrast: #ffffff;
+    --border:          #12e3e7;
+
+    /* this is for the spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+
+    /* this be for borders */
+    --radius-sm:   0.4rem;
+    --radius-md:   0.8rem;
+    --radius-pill: 9999px;
+}
+
+/*DARK MODE COLOURS*/
+@media (prefers-color-scheme: dark) {
+    :root {
+    }
+}
+
+
+/*MAKE EM USE*/
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    margin: 0;
+}
+
+section, aside {
+    background-color: var(--bg-surface);
+    border: 2px solid var(--border);
+    border-radius: var(var(--radius-md));
+    padding: var(var(--space-md));
+}
+
+.site-header {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+}
+
+/*HERO THINGS*/
+
+.hero {
+    background: linear-gradient(135deg, var(--bg-hero), var(--accent));
+    color: var(--text-inverse);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero .tagline {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+}
+
+.hero .date {
+    opacity: 0.85;
+    margin-bottom: var(--space-md);
+}
+
+/* BUTTON TIME */
+.button,
+button[type="submit"],
+.speaker-card button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 0.65rem var(--space-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero .button {
+    background-color: var(--accent-contrast);
+    color: var(--bg-hero);
+}
+
+/* EXTRA THINGS BECAUSE I DIDN'T LIKE THE POINTY */
+.schedule,
+.venue,
+.gallery,
+.faq,
+.register,
+.speakers {
+    padding: 10px;
+    border-radius: var(--radius-md);
+}
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Byte Night – a free evening of tech talks</title>
+
+    <!-- Given: plain, readable defaults. -->
+    <link rel="stylesheet" href="css/base.css">
+
+    <!-- LEARNER A -->
+    <link rel="stylesheet" href="css/components.css"> <!-- Topic 1 -->
+    <link rel="stylesheet" href="css/forms.css">      <!-- Topic 2 -->
+
+    <!-- LEARNER B -->
+    <link rel="stylesheet" href="css/layout.css">     <!-- Topic 3 -->
+    <link rel="stylesheet" href="css/theme.css">      <!-- Topic 4 -->
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="#">Byte Night</a>
+    <nav aria-label="Main">
+        <ul>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- LEARNER B – Topic 4: the hero is a good place for a @keyframes entrance. -->
+    <section class="hero">
+        <h1>Byte Night</h1>
+        <p class="tagline">A free evening of tech talks, workshops and pizza.</p>
+        <p class="date">Thursday 25 February 2027 · 6pm–9pm</p>
+        <a class="button" href="#register">Grab a free ticket</a>
+    </section>
+
+    <!-- LEARNER B – Topic 3: lay schedule + venue out side by side on wide screens. -->
+    <section id="schedule" class="schedule">
+        <h2>Schedule</h2>
+        <ol class="schedule-list">
+            <li><time>18:00</time> Doors open and pizza</li>
+            <li><time>18:30</time> Talk: Shipping your first side project</li>
+            <li><time>19:00</time> Talk: Git habits that save your bacon</li>
+            <li><time>19:30</time> Break</li>
+            <li><time>19:45</time> Workshop: CSS you didn't know existed</li>
+            <li><time>20:30</time> Lightning talks</li>
+            <li><time>21:00</time> Home time</li>
+        </ol>
+    </section>
+
+    <aside class="venue">
+        <h2>Venue</h2>
+        <p>The Old Print Works, Unit 4<br>Somewhere Street<br>M1 0AA</p>
+        <p>Step-free access. Nearest station is a 5-minute walk.</p>
+    </aside>
+
+    <!--
+      LEARNER A – Topic 1: turn each "Read bio" into a popover (no JavaScript).
+      LEARNER B – Topic 3: lay the cards out with Grid and make each card respond
+                           to its own width with a container query.
+    -->
+    <section id="speakers" class="speakers">
+        <h2>Speakers</h2>
+        <div class="speaker-grid">
+
+            <article class="speaker-card">
+                <div class="avatar">PK</div>
+                <h3>Priya Kaur</h3>
+                <p class="role">Junior developer</p>
+                <button type="button">Read bio</button>
+                <p class="bio">Priya built her first side project during her apprenticeship and now looks after three internal tools at work.</p>
+            </article>
+
+            <article class="speaker-card">
+                <div class="avatar">TE</div>
+                <h3>Tom Ellis</h3>
+                <p class="role">DevOps engineer</p>
+                <button type="button">Read bio</button>
+                <p class="bio">Tom has rescued more broken Git repos than he cares to admit. He'll show you how to avoid needing him.</p>
+            </article>
+
+            <article class="speaker-card">
+                <div class="avatar">AB</div>
+                <h3>Aisha Bello</h3>
+                <p class="role">Front-end developer</p>
+                <button type="button">Read bio</button>
+                <p class="bio">Aisha builds design systems and is on a one-woman mission to delete unnecessary JavaScript.</p>
+            </article>
+
+            <article class="speaker-card">
+                <div class="avatar">DW</div>
+                <h3>Dan Whitfield</h3>
+                <p class="role">Software tester</p>
+                <button type="button">Read bio</button>
+                <p class="bio">Dan breaks things for a living. Bring him your forms and he'll find the bug in under a minute.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- LEARNER A – Topic 1: make this a swipeable carousel with scroll-snap. -->
+    <section id="gallery" class="gallery">
+        <h2>Last time at Byte Night</h2>
+        <ul class="slides">
+            <li class="slide">Photo 1 – A packed room</li>
+            <li class="slide">Photo 2 – Pizza o'clock</li>
+            <li class="slide">Photo 3 – Workshop in full flow</li>
+            <li class="slide">Photo 4 – Lightning talks</li>
+            <li class="slide">Photo 5 – The after-chat</li>
+        </ul>
+    </section>
+
+    <!-- LEARNER A – Topic 1: turn these into an accordion with <details>/<summary>. -->
+    <section id="faq" class="faq">
+        <h2>FAQ</h2>
+
+        <h3>Is it really free?</h3>
+        <p>Yes. Pizza included.</p>
+
+        <h3>Do I need to be an experienced developer?</h3>
+        <p>Not at all. Most people are early in their careers or still learning.</p>
+
+        <h3>Can I watch online?</h3>
+        <p>Yes, pick an online ticket when you register and we'll email you a link.</p>
+
+        <h3>Can I give a lightning talk?</h3>
+        <p>Please do! Five minutes on anything you've learned recently. Tick the box when you register.</p>
+    </section>
+
+    <!--
+      LEARNER A – Topic 2: this form has no validation at all.
+      Use the right input types and validation attributes, then style the
+      valid/invalid states with CSS only.
+    -->
+    <section id="register" class="register">
+        <h2>Register</h2>
+        <form action="#register" method="get">
+
+            <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text">
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text">
+            </div>
+
+            <div class="field">
+                <label for="postcode">Postcode</label>
+                <input id="postcode" name="postcode" type="text">
+            </div>
+
+            <div class="field">
+                <label for="experience">Years of coding experience</label>
+                <input id="experience" name="experience" type="text">
+            </div>
+
+            <fieldset class="tickets">
+                <legend>Ticket type</legend>
+                <label><input type="radio" name="ticket" value="in-person"> In person</label>
+                <label><input type="radio" name="ticket" value="online"> Online</label>
+            </fieldset>
+
+            <div class="field checkbox">
+                <label><input id="pizza" name="pizza" type="checkbox"> I'm staying for pizza</label>
+            </div>
+
+            <!-- Should only appear when the pizza box is ticked. -->
+            <div class="field dietary">
+                <label for="dietary">Dietary requirements</label>
+                <input id="dietary" name="dietary" type="text">
+            </div>
+
+            <div class="field checkbox">
+                <label><input id="lightning" name="lightning" type="checkbox"> I'd like to give a lightning talk</label>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>Byte Night is a fictional event made up for a coaching session.</p>
+</footer>
+
+</body>
+</html>
